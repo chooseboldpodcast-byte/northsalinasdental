@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CTABanner() {
   return (
-    <section className="py-12  bg-white/30">
+    <section className="py-4  bg-white/30">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-primary-900 font-serif text-display-2 mb-2">
           Ready to love your dentist?

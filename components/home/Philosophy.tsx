@@ -4,17 +4,51 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-const benefits = [
-  "Biocompatible, non-toxic materials",
-  "Minimally invasive techniques",
-  "Personalized wellness plans",
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Philosophy() {
+  const { language } = useLanguage();
+
+  const content = {
+    en: {
+      overline: "Who We Are",
+      heading: "We treat the person,",
+      headingLine2: "not just the teeth.",
+      description1: "At North Salinas Dental, we believe oral health is the gateway to total body wellness. Our holistic approach considers how your smile affects your overall health, confidence, and life.",
+      description2: "We're fluent in English, Spanish, Hindi, and Punjabi, so you can communicate comfortably and feel truly welcome.",
+      benefits: [
+        "Biocompatible, non-toxic materials",
+        "Minimally invasive techniques",
+        "Personalized wellness plans"
+      ],
+      testimonial: "\"Always a pleasant experience, they make me feel comfortable and the staff is always attentive and friendly!\"",
+      testimonialAuthor: "— Makenna Hertsch, Patient",
+      ctaButton: "Meet Dr. Ritu Bhardwaj",
+      imageAlt: "Happy patient with beautiful smile"
+    },
+    es: {
+      overline: "Quiénes Somos",
+      heading: "Tratamos a la persona,",
+      headingLine2: "no solo los dientes.",
+      description1: "En North Salinas Dental, creemos que la salud bucal es la puerta de entrada al bienestar total del cuerpo. Nuestro enfoque holístico considera cómo su sonrisa afecta su salud general, confianza y vida.",
+      description2: "Hablamos inglés, español, hindi y punjabi con fluidez, para que pueda comunicarse cómodamente y sentirse verdaderamente bienvenido.",
+      benefits: [
+        "Materiales biocompatibles y no tóxicos",
+        "Técnicas mínimamente invasivas",
+        "Planes de bienestar personalizados"
+      ],
+      testimonial: "\"¡Siempre es una experiencia agradable, me hacen sentir cómoda y el personal siempre es atento y amable!\"",
+      testimonialAuthor: "— Makenna Hertsch, Paciente",
+      ctaButton: "Conozca a la Dra. Bhardwaj",
+      imageAlt: "Paciente feliz con una sonrisa hermosa"
+    }
+  };
+
+  const t = content[language];
+
   return (
     <section className="py-24 bg-white overflow-hidden">
-      <div className="container-wide">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Column */}
           <motion.div
@@ -24,10 +58,10 @@ export default function Philosophy() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-elevated">
               <Image
-                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1974&auto=format&fit=crop"
-                alt="Happy patient with beautiful smile"
+                src="/images/philosophy-patient.jpg"
+                alt={t.imageAlt}
                 fill
                 className="object-cover"
               />
@@ -39,13 +73,13 @@ export default function Philosophy() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="absolute -bottom-6 -right-6 lg:bottom-8 lg:-right-12 max-w-sm bg-white rounded-2xl p-6 shadow-elevated"
+              className="absolute -bottom-6 -right-6 lg:bottom-8 lg:-right-12 max-w-sm bg-white rounded-2xl p-6 shadow-elevated border border-primary-100"
             >
-              <p className="font-serif text-lg italic text-slate-700 mb-4">
-                "Always a pleasant experience, they make me feel comfortable and the staff is always attentive and friendly!"
+              <p className="font-serif text-md italic text-gray-700 mb-4">
+                {t.testimonial}
               </p>
-              <p className="text-sm font-semibold text-slate-800 uppercase tracking-wide">
-                — Makenna Hertsch, Patient
+              <p className="text-xs font-semibold text-primary-800 uppercase tracking-wide">
+                {t.testimonialAuthor}
               </p>
             </motion.div>
           </motion.div>
@@ -57,23 +91,24 @@ export default function Philosophy() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span className="section-overline mb-4 block">Who We Are</span>
-            <h2 className="text-display-2 font-serif text-slate-800 mb-6">
-              We treat the person,
+            <span className="inline-block text-sm font-semibold text-primary-600 uppercase tracking-wider mb-4">
+              {t.overline}
+            </span>
+            <h2 className="text-display-2 font-serif text-gray-900 mb-6">
+              {t.heading}
               <br />
-              not just the teeth.
+              {t.headingLine2}
             </h2>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              At North Salinas Dental, we believe oral health is the gateway to
-              total body wellness. Our holistic approach considers how your
-              smile affects your overall health, confidence, and life.
-              <br />
-              We're fluent in English, Spanish, Hindi, and Punjabi, so you can communicate comfortably and feel truly welcome.
+            <p className="text-sm text-gray-700 mb-4 leading-relaxed">
+              {t.description1}
+            </p>
+            <p className="text-sm text-gray-700 mb-8 leading-relaxed">
+              {t.description2}
             </p>
 
             {/* Benefits List */}
             <ul className="space-y-4 mb-10">
-              {benefits.map((benefit, index) => (
+              {t.benefits.map((benefit, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, x: 20 }}
@@ -82,16 +117,19 @@ export default function Philosophy() {
                   transition={{ duration: 0.4, delay: 0.1 * index }}
                   className="flex items-center gap-3"
                 >
-                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-sage-100 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-sage-600" />
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary-100 flex items-center justify-center">
+                    <Check className="w-4 h-4 text-secondary-600" />
                   </span>
-                  <span className="text-slate-700">{benefit}</span>
+                  <span className="text-gray-700 text-sm">{benefit}</span>
                 </motion.li>
               ))}
             </ul>
 
-            <Link href="/team" className="btn-secondary">
-              Meet Dr. Bhardwaj
+            <Link 
+              href="/team" 
+              className="inline-block bg-white hover:bg-secondary-50 text-primary-700 border-2 border-primary-600 hover:border-secondary-500 px-8 py-3 rounded-full font-semibold transition-all duration-300"
+            >
+              {t.ctaButton}
             </Link>
           </motion.div>
         </div>

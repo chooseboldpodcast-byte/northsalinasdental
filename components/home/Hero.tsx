@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function HeroExample() {
@@ -10,7 +10,7 @@ export default function HeroExample() {
       badge: "Accepting New Patients",
       heading: "Dentistry reimagined for",
       headingAccent: "wellness",
-      description: "Welcome to North Salinas Dental, where we create beautiful and healthy smiles by combining advanced technology with patient comfort and personalized care.",
+      description: "Welcome to North Salinas Dental, Office of Dr. Ritu Bhardwaj DDS, where we create beautiful and healthy smiles by combining advanced technology with patient comfort and personalized care.",
       ctaPrimary: "Request Appointment",
       ctaSecondary: "Explore Services",
       socialProof: "5-star Customer Rating",
@@ -58,17 +58,17 @@ export default function HeroExample() {
             </h1>
 
             {/* Description */}
-            <p className="text-lg text-gray-700 leading-relaxed max-w-xl">
+            <p className="text-md text-gray-700 leading-relaxed max-w-xl">
               {t.description}
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold shadow-card hover:shadow-elevated transition-all duration-300 transform hover:scale-105">
+              <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold shadow-card hover:shadow-elevated transition-all duration-300 transform hover:scale-105">
                 {t.ctaPrimary}
               </button>
 
-              <button className="bg-white hover:bg-secondary-50 text-primary-700 border-2 border-primary-200 hover:border-secondary-300 px-8 py-4 rounded-xl font-semibold transition-all duration-300">
+              <button className="bg-white hover:bg-secondary-50 text-primary-700 border-2 border-primary-200 hover:border-secondary-300 px-8 py-4 rounded-full font-semibold transition-all duration-300">
                 {t.ctaSecondary}
               </button>
             </div>
@@ -96,29 +96,38 @@ export default function HeroExample() {
             </div>
           </div>
 
-          {/* Right Content - Image Placeholder */}
+          {/* Right Content */}
           <div className="relative lg:block hidden">
             <div className="relative rounded-4xl overflow-hidden shadow-elevated">
               {/* Replace with actual image */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary-100 to-secondary-100"></div>
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/images/hero-image1.jpg"  // Replace with your actual image path
+                  alt="North Salinas Dental Office"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 0vw, 50vw"
+                  priority
+                />
+              </div>
 
               {/* Floating card overlay */}
-              <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm p-6 rounded-2xl shadow-card">
+              <div className="absolute bottom-6 left-8 right-8 bg-white/95 backdrop-blur-sm p-2 rounded-2xl shadow-card">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-secondary-400 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  <div className="w-8 h-8 bg-secondary-400 rounded-full flex items-center justify-center text-white font-bold text-xl">
                     ✓
                   </div>
                   <div>
                     <p className="font-semibold text-primary-900">{t.floatingCard.title}</p>
-                    <p className="text-sm text-gray-600">{t.floatingCard.subtitle}</p>
+                    <p className="text-xs text-gray-600">{t.floatingCard.subtitle}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-secondary-400 rounded-full blur-3xl opacity-20"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-18 bg-primary-400 rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute -top-4 -right-4 w-18 h-24 bg-secondary-400 rounded-full blur-3xl opacity-80"></div>
+            <div className="absolute -bottom-4 -left-4 w-18 h-12 bg-primary-400 rounded-full blur-3xl opacity-80"></div>
           </div>
         </div>
       </div>
