@@ -6,6 +6,7 @@ import { Check, Plus, Minus } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { serviceContent } from "@/data/serviceContent";
+import { ServiceContent, FAQ } from "@/types/serviceTypes";
 
 interface ServiceSectionProps {
   serviceId: string;
@@ -15,7 +16,7 @@ export default function ServiceSection({ serviceId }: ServiceSectionProps) {
   const { language } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const service = serviceContent[serviceId]?.[language];
+  const service = serviceContent[serviceId]?.[language] as ServiceContent | undefined;
 
   if (!service) return null;
 
@@ -71,7 +72,7 @@ export default function ServiceSection({ serviceId }: ServiceSectionProps) {
                 {service.treatmentsTitle}
               </h3>
               <ul className="space-y-3">
-                {service.treatments.map((treatment: any, index: number) => (
+                {service.treatments.map((treatment: string, index: number) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: 20 }}
@@ -95,7 +96,7 @@ export default function ServiceSection({ serviceId }: ServiceSectionProps) {
                 {service.benefitsTitle}
               </h3>
               <ul className="space-y-3">
-                {service.benefits.map((benefit, index) => (
+                {service.benefits.map((benefit: string, index: number) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-200 flex items-center justify-center mt-0.5">
                       <Check className="w-4 h-4 text-primary-700" />
@@ -128,7 +129,7 @@ export default function ServiceSection({ serviceId }: ServiceSectionProps) {
             {service.faqTitle}
           </h3>
           <div className="space-y-4">
-            {service.faqs.map((faq, index) => (
+            {service.faqs.map((faq: FAQ, index: number) => (
               <div
                 key={index}
                 className="bg-white rounded-xl shadow-card overflow-hidden border border-primary-100"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { AppointmentProvider } from "@/context/AppointmentContext";
 
 
 export const metadata: Metadata = {

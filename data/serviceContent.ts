@@ -1,3 +1,5 @@
+import { ServiceContentMap } from '@/types/serviceTypes';
+
 export const serviceContent: any = {
   cleaning: {
     en: {

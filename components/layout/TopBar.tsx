@@ -4,10 +4,12 @@ import { Calendar, MapPin, Phone, X, Globe } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useAppointment } from "@/context/AppointmentContext";
 
 export default function TopBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
+  const { openAppointmentModal } = useAppointment();
 
   return (
     <>
@@ -30,18 +32,10 @@ export default function TopBar() {
             {/* Desktop Actions + Language Toggle */}
             <div className="hidden lg:flex items-center gap-6 xl:gap-8">
               {/* Request Appointment */}
-              <a
-                href="#appointment"
-                className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition-colors group"
-              >
-                <div className="w-10 h-10 bg-primary-50 group-hover:bg-primary-100 rounded-lg flex items-center justify-center transition-colors">
-                  <Calendar className="w-5 h-5 text-primary-600" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm font-semibold text-gray-900">{t.requestAppointment}</p>
-                  <p className="text-xs text-gray-600">{t.scheduleNow}</p>
-                </div>
-              </a>
+              <button onClick={openAppointmentModal} className="...">
+                <Calendar className="w-5 h-5" />
+                Request Appointment
+              </button>
 
               {/* Visit Us */}
               <a
