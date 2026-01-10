@@ -2,7 +2,7 @@
 
 import { Calendar, MapPin, Phone, X, Globe } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useAppointment } from "@/context/AppointmentContext";
 
@@ -10,6 +10,19 @@ export default function TopBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, toggleLanguage, t } = useLanguage();
   const { openAppointmentModal } = useAppointment();
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <>
@@ -123,7 +136,7 @@ export default function TopBar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-primary-100 shadow-lg animate-fade-in">
+        <div className="lg:hidden fixed top-20 left-0 right-0 bottom-0 bg-white z-40 overflow-y-auto shadow-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-4">
             {/* Request Appointment - Mobile */}
             <button

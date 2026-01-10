@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import { useAppointment } from "@/context/AppointmentContext";
 
 export default function HeroExample() {
   const { language } = useLanguage();
+  const { openAppointmentModal } = useAppointment();
 
   const content = {
     en: {
@@ -64,13 +66,19 @@ export default function HeroExample() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold shadow-card hover:shadow-elevated transition-all duration-300 transform hover:scale-105">
+              <button 
+                onClick={openAppointmentModal}
+                className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold shadow-card hover:shadow-elevated transition-all duration-300 transform hover:scale-105"
+              >
                 {t.ctaPrimary}
               </button>
 
-              <button className="bg-white hover:bg-secondary-50 text-primary-700 border-2 border-primary-200 hover:border-secondary-300 px-8 py-4 rounded-full font-semibold transition-all duration-300">
+              <a
+                href="/services"
+                className="bg-white hover:bg-secondary-50 text-primary-700 border-2 border-primary-200 hover:border-secondary-300 px-8 py-4 rounded-full font-semibold transition-all duration-300 inline-block"
+              >
                 {t.ctaSecondary}
-              </button>
+              </a>
             </div>
 
             {/* Social Proof */}
@@ -102,7 +110,7 @@ export default function HeroExample() {
               {/* Replace with actual image */}
               <div className="relative aspect-[4/3]">
                 <Image
-                  src="/images/hero-image1.jpg"  // Replace with your actual image path
+                  src="/images/hero-image1.jpg"
                   alt="North Salinas Dental Office"
                   fill
                   className="object-cover"
