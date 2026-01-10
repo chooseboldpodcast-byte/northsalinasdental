@@ -71,7 +71,7 @@ export default function ServiceSection({ serviceId }: ServiceSectionProps) {
                 {service.treatmentsTitle}
               </h3>
               <ul className="space-y-3">
-                {service.treatments.map((treatment, index) => (
+                {service.treatments.map((treatment: any, index: number) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: 20 }}
