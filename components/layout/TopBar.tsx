@@ -32,9 +32,17 @@ export default function TopBar() {
             {/* Desktop Actions + Language Toggle */}
             <div className="hidden lg:flex items-center gap-6 xl:gap-8">
               {/* Request Appointment */}
-              <button onClick={openAppointmentModal} className="...">
-                <Calendar className="w-5 h-5" />
-                Request Appointment
+              <button
+                onClick={openAppointmentModal}
+                className="flex items-center gap-2 text-gray-700 hover:text-primary-600 transition-colors group"
+              >
+                <div className="w-10 h-10 bg-primary-50 group-hover:bg-primary-100 rounded-lg flex items-center justify-center transition-colors">
+                  <Calendar className="w-5 h-5 text-primary-600" />
+                </div>
+                <div className="text-left">
+                  <p className="text-sm font-semibold text-gray-900">{t.requestAppointment}</p>
+                  <p className="text-xs text-gray-600">{t.scheduleNow}</p>
+                </div>
               </button>
 
               {/* Visit Us */}
@@ -118,10 +126,12 @@ export default function TopBar() {
         <div className="lg:hidden bg-white border-b border-primary-100 shadow-lg animate-fade-in">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-4">
             {/* Request Appointment - Mobile */}
-            <a
-              href="#appointment"
-              className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary-50 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
+            <button
+              onClick={() => {
+                openAppointmentModal();
+                setMobileMenuOpen(false);
+              }}
+              className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary-50 transition-colors w-full text-left"
             >
               <div className="w-12 h-12 bg-primary-50 rounded-lg flex items-center justify-center">
                 <Calendar className="w-6 h-6 text-primary-600" />
@@ -130,7 +140,7 @@ export default function TopBar() {
                 <p className="font-semibold text-gray-900">{t.requestAppointment}</p>
                 <p className="text-sm text-gray-600">{t.scheduleNow}</p>
               </div>
-            </a>
+            </button>
 
             {/* Visit Us - Mobile */}
             <a

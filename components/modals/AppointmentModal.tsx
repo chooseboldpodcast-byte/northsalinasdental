@@ -43,7 +43,7 @@ export default function AppointmentModal({ isOpen, onClose, onSuccess }: Appoint
 
   const content = {
     en: {
-      title: "Book Appointment",
+      title: "Request Appointment",
       fullName: "Full Name",
       phone: "Enter Cell Phone",
       email: "Email (required)",
@@ -74,7 +74,7 @@ export default function AppointmentModal({ isOpen, onClose, onSuccess }: Appoint
       }
     },
     es: {
-      title: "Reservar Cita",
+      title: "Solicitar cita",
       fullName: "Nombre Completo",
       phone: "Ingrese Teléfono Celular",
       email: "Correo Electrónico (requerido)",

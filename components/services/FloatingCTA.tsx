@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import { Calendar } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { useAppointment } from "@/context/AppointmentContext";
 
 export default function FloatingCTA() {
   const { language } = useLanguage();
+  const { openAppointmentModal } = useAppointment();
   const [isVisible, setIsVisible] = useState(false);
 
   const content = {
@@ -40,13 +42,13 @@ export default function FloatingCTA() {
           transition={{ duration: 0.3 }}
           className="fixed bottom-8 right-8 z-50"
         >
-          <a
-            href="#appointment"
+          <button
+            onClick={openAppointmentModal}
             className="flex items-center gap-3 bg-primary-600 hover:bg-primary-700 text-white px-6 py-4 rounded-full font-semibold shadow-elevated hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
           >
             <Calendar className="w-5 h-5" />
             <span className="hidden sm:inline">{t.buttonText}</span>
-          </a>
+          </button>
         </motion.div>
       )}
     </AnimatePresence>
