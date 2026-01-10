@@ -3,7 +3,6 @@ import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { AppointmentProvider } from "@/context/AppointmentContext";
 
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://northsalinasdental.com"),
   title: {
@@ -133,7 +132,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col">
         <LanguageProvider>
-          {children}
+          <AppointmentProvider>
+            {children}
+          </AppointmentProvider>
         </LanguageProvider>
       </body>
     </html>
