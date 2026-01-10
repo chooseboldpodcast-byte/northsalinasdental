@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { AppointmentProvider } from "@/context/AppointmentContext";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://northsalinasdental.com"),
@@ -72,6 +73,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -101,19 +103,13 @@ export default function RootLayout({
                   "@type": "OpeningHoursSpecification",
                   dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
                   opens: "08:00",
-                  closes: "17:00",
+                  closes: "18:00",
                 },
                 {
                   "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Friday - Sunday",
-                  opens: "08:00",
-                  closes: "16:00",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Saturday",
-                  opens: "09:00",
-                  closes: "14:00",
+                  dayOfWeek: ["Friday", "Saturday", "Sunday"],
+                  opens: "00:00",
+                  closes: "00:00",
                 },
               ],
               priceRange: "$$",
@@ -134,6 +130,7 @@ export default function RootLayout({
         <LanguageProvider>
           <AppointmentProvider>
             {children}
+            <MobileBottomNav />
           </AppointmentProvider>
         </LanguageProvider>
       </body>

@@ -48,4 +48,17 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Safe area utilities for iOS notch/home indicator */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  
+  .mb-safe {
+    margin-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  
+  .h-safe-bottom {
+    height: calc(4rem + env(safe-area-inset-bottom, 0px));
+  }
 }

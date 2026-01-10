@@ -14,7 +14,7 @@ interface Translations {
   address: string;
   phone: string;
 
-  // Add more as needed for other components
+  // Navigation
   home: string;
   services: string;
   ourTeam: string;
@@ -22,6 +22,14 @@ interface Translations {
   insurance: string;
   specials: string;
   contact: string;
+
+  // Mobile Bottom Nav
+  menu: string;
+  ourDoctor: string;
+  call: string;
+  newPatients: string;
+  bookOnline: string;
+  hours: string;
 }
 
 interface LanguageContextType {
@@ -49,6 +57,14 @@ const translations: Record<Language, Translations> = {
     insurance: "Insurance",
     specials: "Specials",
     contact: "Contact",
+
+    // Mobile Bottom Nav
+    menu: "Menu",
+    ourDoctor: "Our Doctor",
+    call: "Call",
+    newPatients: "New Patients",
+    bookOnline: "Book Online",
+    hours: "Hours",
   },
   es: {
     // TopBar
@@ -67,6 +83,14 @@ const translations: Record<Language, Translations> = {
     insurance: "Seguro",
     specials: "Especiales",
     contact: "Contacto",
+
+    // Mobile Bottom Nav
+    menu: "Menú",
+    ourDoctor: "Doctora",
+    call: "Llamar",
+    newPatients: "Nuevos Pacientes",
+    bookOnline: "Reservar",
+    hours: "Horario",
   },
 };
 
