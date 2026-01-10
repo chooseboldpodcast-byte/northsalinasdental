@@ -3,20 +3,35 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/team", label: "Our Team" },
-  { href: "/team", label: "Patient Education" },
-  { href: "/team", label: "Insurance" },
-  { href: "/specials", label: "Specials" },
-  { href: "/contact", label: "Contact" },
-];
+const navLinks = {
+  en: [
+    { href: "/", label: "Home" },
+    { href: "/services", label: "Services" },
+    { href: "/team", label: "Our Team" },
+    { href: "/team", label: "Patient Education" },
+    { href: "/team", label: "Insurance" },
+    { href: "/specials", label: "Specials" },
+    { href: "/contact", label: "Contact" },
+  ],
+  es: [
+    { href: "/", label: "Inicio" },
+    { href: "/services", label: "Servicios" },
+    { href: "/team", label: "Nuestro Equipo" },
+    { href: "/team", label: "Educación del Paciente" },
+    { href: "/team", label: "Seguro" },
+    { href: "/specials", label: "Ofertas Especiales" },
+    { href: "/contact", label: "Contacto" },
+  ],
+};
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language } = useLanguage();
+
+  const links = language === "es" ? navLinks.es : navLinks.en;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +42,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -42,13 +56,11 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Desktop Navbar - NOW STICKY */}
       <nav className="sticky top-20 z-40 bg-primary-700 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center h-12">
-            {/* Desktop Navigation Links - Centered */}
             <div className="hidden lg:flex items-center justify-center space-x-8">
-              {navLinks.map((link) => (
+              {links.map((link) => (
                 <Link
                   key={link.href + link.label}
                   href={link.href}
@@ -59,7 +71,6 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden text-white p-2 hover:bg-primary-800 rounded-lg transition-colors ml-auto"
@@ -75,11 +86,10 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu - ALSO STICKY */}
       {isOpen && (
         <div className="lg:hidden fixed top-32 left-0 right-0 z-40 bg-primary-800 shadow-lg max-h-[calc(100vh-8rem)] overflow-y-auto">
           <div className="px-4 py-6 space-y-4">
-            {navLinks.map((link) => (
+            {links.map((link) => (
               <Link
                 key={link.href + link.label}
                 href={link.href}
