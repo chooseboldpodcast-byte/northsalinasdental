@@ -6,10 +6,27 @@ import { Check, Plus, Minus } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { serviceContent } from "@/data/serviceContent";
-import { ServiceContent, FAQ } from "@/types/serviceTypes";
 
 interface ServiceSectionProps {
   serviceId: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface ServiceContent {
+  title: string;
+  description: string;
+  treatmentsTitle: string;
+  treatments: string[];
+  benefitsTitle: string;
+  benefits: string[];
+  faqTitle: string;
+  faqs: FAQ[];
+  ctaButton: string;
+  image: string;
 }
 
 export default function ServiceSection({ serviceId }: ServiceSectionProps) {
