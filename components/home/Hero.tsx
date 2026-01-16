@@ -10,8 +10,9 @@ export default function HeroExample() {
   const content = {
     en: {
       badge: "Accepting New Patients",
-      heading: "Dentistry reimagined for",
-      headingAccent: "wellness",
+      headingBefore: "Your family's",
+      headingAccent: "dental home",
+      headingAfter: "in Salinas",
       description: "Welcome to North Salinas Dental, Office of Dr. Ritu Bhardwaj DDS, where we create beautiful and healthy smiles by combining advanced technology with patient comfort and personalized care.",
       ctaPrimary: "Request Appointment",
       ctaSecondary: "Explore Services",
@@ -23,8 +24,9 @@ export default function HeroExample() {
     },
     es: {
       badge: "Aceptamos Nuevos Pacientes",
-      heading: "Odontología reinventada para el",
-      headingAccent: "bienestar",
+      headingBefore: "El",
+      headingAccent: "hogar dental",
+      headingAfter: "de su familia en Salinas",
       description: "Bienvenido a North Salinas Dental, donde creamos sonrisas hermosas y saludables combinando tecnología avanzada con comodidad del paciente y atención personalizada.",
       ctaPrimary: "Solicitar Cita",
       ctaSecondary: "Explorar Servicios",
@@ -39,7 +41,7 @@ export default function HeroExample() {
   const t = content[language];
 
   return (
-    <section className="relative bg-gradient-to-br from-primary-50 via-neutral-lavender to-secondary-50">
+    <section className="relative bg-gradient-to-br from-primary-50 via-neutral-light to-secondary-50">
       {/* Background overlay with subtle pattern */}
       <div className="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
 
@@ -55,8 +57,9 @@ export default function HeroExample() {
 
             {/* Main Heading */}
             <h1 className="font-serif text-display-1 text-primary-900">
-              {t.heading}{" "}
-              <span className="text-primary-600 italic">{t.headingAccent}</span>.
+              {t.headingBefore}{" "}
+              <span className="text-primary-600">{t.headingAccent}</span>{" "}
+              {t.headingAfter}
             </h1>
 
             {/* Description */}

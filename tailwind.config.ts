@@ -10,49 +10,45 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          50: "#FAF5FF",
-          100: "#F3E8FF",
-          200: "#E9D5FF",
-          300: "#D8B4FE",
-          400: "#C084FC",
-          500: "#A855F7",  // Soft purple
-          600: "#9333EA",
-          700: "#7E22CE",
-          800: "#6B21A8",
-          900: "#581C87",
+          50: "#E6F7F7",
+          100: "#CCF0EF",
+          200: "#99E0DF",
+          300: "#66D1CF",
+          400: "#33C1BF",
+          500: "#16938F",  // Primary Teal
+          600: "#0D7C7A",  // Dark Teal (hover)
+          700: "#0A6664",
+          800: "#08504E",
+          900: "#053A38",
         },
         secondary: {
-          50: "#ECFDF5",
-          100: "#D1FAE5",
-          200: "#A7F3D0",
-          300: "#6EE7B7",
-          400: "#34D399",  // Fresh mint
-          500: "#10B981",
-          600: "#059669",
-          700: "#047857",
-          800: "#065F46",
-          900: "#064E3B",
+          50: "#FFF5F3",
+          100: "#FFEBE7",
+          200: "#FFD7CF",
+          300: "#FFB5A7",  // Coral Light
+          400: "#FF8B7B",  // Coral Accent
+          500: "#FF6B5B",
+          600: "#E54B3B",
+          700: "#CC3B2B",
+          800: "#B32B1B",
+          900: "#991B0B",
+        },
+        navy: {
+          500: "#1B365D",  // Navy Text (headlines)
+          600: "#152A4A",
+          700: "#0F1E37",
+          800: "#0A1324",
+          900: "#050911",
         },
         neutral: {
-          lavender: "#F5F3FF",
-          mint: "#F0FDF4",
+          light: "#F7FAFC",  // Light Background
           cream: "#FFFBEB",
           white: "#FFFFFF",
         },
-        // Legacy colors for gradual migration
-        sage: {
-          50: "#F4F6F3",
-          100: "#E8EDE6",
-          200: "#D1DBCD",
-          300: "#B3C4AC",
-          400: "#8FA785",
-          500: "#6B8A5E",
-          600: "#5C6B54",
-          700: "#4A5548",
-          800: "#3D463C",
-          900: "#2F3630",
+        gray: {
+          text: "#4A5568",  // Gray Text (body)
         },
-        cream: "#FAFAF8",
+        cream: "#F7FAFC",
         ivory: "#F5F5F0",
       },
       fontFamily: {
@@ -70,15 +66,17 @@ const config: Config = {
         "4xl": "2rem",
       },
       boxShadow: {
-        soft: "0 2px 15px -3px rgba(168, 85, 247, 0.07), 0 10px 20px -2px rgba(168, 85, 247, 0.04)",
-        card: "0 4px 25px -5px rgba(168, 85, 247, 0.1), 0 10px 30px -5px rgba(168, 85, 247, 0.04)",
-        elevated: "0 25px 50px -12px rgba(168, 85, 247, 0.15)",
-        mint: "0 2px 15px -3px rgba(16, 185, 129, 0.07), 0 10px 20px -2px rgba(16, 185, 129, 0.04)",
+        soft: "0 2px 15px -3px rgba(22, 147, 143, 0.07), 0 10px 20px -2px rgba(22, 147, 143, 0.04)",
+        card: "0 4px 25px -5px rgba(22, 147, 143, 0.1), 0 10px 30px -5px rgba(22, 147, 143, 0.04)",
+        elevated: "0 25px 50px -12px rgba(22, 147, 143, 0.15)",
+        coral: "0 2px 15px -3px rgba(255, 139, 123, 0.07), 0 10px 20px -2px rgba(255, 139, 123, 0.04)",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
         "scale-in": "scaleIn 0.5s ease-out forwards",
+        ticker: "ticker 30s linear infinite",
+        "ticker-smooth": "tickerSmooth 20s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -92,6 +90,14 @@ const config: Config = {
         scaleIn: {
           "0%": { opacity: "0", transform: "scale(0.95)" },
           "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        ticker: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        tickerSmooth: {
+          "0%": { transform: "translate3d(0, 0, 0)" },
+          "100%": { transform: "translate3d(-50%, 0, 0)" },
         },
       },
     },

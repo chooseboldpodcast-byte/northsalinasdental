@@ -1,5 +1,6 @@
 import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
+import NewsTicker from "@/components/layout/NewsTicker";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import Features from "@/components/home/Features";
@@ -14,11 +15,12 @@ export default function Home() {
     <>
       <TopBar />
       <Navbar />
+      <NewsTicker />
       <main>
         <Hero />
         <MeetTheDoctor />
         <NewPatientSpecials />
-        <Philosophy />
+        {/*<Philosophy /> */}
         <ServicesGrid />
         <CTABanner />
       </main>

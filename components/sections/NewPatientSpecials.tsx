@@ -53,19 +53,19 @@ export default function NewPatientSpecials() {
   const t = content[language];
 
   return (
-    <section className="py-16 px-4 md:px-8 bg-purple-50/50">
+    <section className="py-16 px-4 md:px-8 bg-primary-50/50">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif text-purple-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif text-primary-900 mb-4">
             {t.header}
           </h2>
-          <div className="w-24 h-1 bg-purple-500 mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-primary-500 mx-auto rounded-full mb-6"></div>
           
           <p className="text-gray-600 max-w-2xl mx-auto mb-2">
             {t.subtext}
           </p>
-          <p className="font-semibold text-purple-700">
+          <p className="font-semibold text-secondary-500">
             {t.expiry}
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function NewPatientSpecials() {
           <SpecialCard 
             type="standard"
             title={t.card1.title}
-            price="68"
+            price="99"
             details={t.card1.details}
             disclaimer={t.card1.disclaimer}
             buttonText={t.buttons.schedule}
@@ -103,7 +103,7 @@ const SpecialCard = ({ type, title, price, details, disclaimer, imageUrl, imageA
   // RENDER IMAGE CARD
   if (type === 'image' && imageUrl) {
     return (
-      <div className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden border border-purple-100 hover:shadow-xl transition-shadow duration-300">
+      <div className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden border border-primary-100 hover:shadow-xl transition-shadow duration-300">
         <div className="w-full bg-gray-100">
              <Image 
                src={imageUrl} 
@@ -119,22 +119,22 @@ const SpecialCard = ({ type, title, price, details, disclaimer, imageUrl, imageA
 
   // RENDER STANDARD CARD (Default)
   return (
-    <div className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden border border-purple-100 hover:shadow-xl transition-shadow duration-300 h-full">
+    <div className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden border border-primary-100 hover:shadow-xl transition-shadow duration-300 h-full">
       {/* Card Header */}
-      <div className="bg-purple-700 p-12 text-center relative h-48 flex items-start justify-center">
+      <div className="bg-primary-900 p-12 text-center relative h-48 flex items-start justify-center">
         <h3 className="text-white text-2xl font-medium tracking-wide z-10 px-4">
           {title}
         </h3>
-        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-purple-600 to-purple-800 opacity-50"></div>
+        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-primary-500 to-primary-700 opacity-50"></div>
       </div>
 
       {/* Price Circle */}
       <div className="relative -mt-12 flex justify-center mb-12">
         <div className="bg-white p-4 rounded-full shadow-md">
-          <div className="w-24 h-24 rounded-full border-6 border-teal-100 flex items-center justify-center bg-white">
+          <div className="w-24 h-24 rounded-full border-6 border-primary-100 flex items-center justify-center bg-white">
             <div className="text-center">
-              <span className="text-xl text-purple-400 align-top relative top-1">$</span>
-              <span className="text-7xl font-serif text-purple-800">{price}</span>
+              <span className="text-xl text-primary-400 align-top relative top-1">$</span>
+              <span className="text-7xl font-serif text-primary-700">{price}</span>
             </div>
           </div>
         </div>
@@ -146,7 +146,7 @@ const SpecialCard = ({ type, title, price, details, disclaimer, imageUrl, imageA
           {details}
         </p>
 
-        <button className="w-full py-3 px-6 rounded-full border-2 border-purple-600 text-purple-700 font-semibold hover:bg-purple-600 hover:text-white transition-colors duration-300 mb-6">
+        <button className="w-full py-3 px-6 rounded-full border-2 border-primary-500 text-primary-600 font-semibold hover:bg-primary-500 hover:text-white transition-colors duration-300 mb-6">
           {buttonText}
         </button>
 

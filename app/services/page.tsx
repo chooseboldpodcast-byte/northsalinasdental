@@ -26,6 +26,9 @@ export default function ServicesPage() {
         <ServiceSection serviceId="cosmetic" />
         <ServiceSection serviceId="replacement" />
         <ServiceSection serviceId="extraction" />
+        <ServiceSection serviceId="veneers" />
+        <ServiceSection serviceId="same-day-crowns" />
+        <ServiceSection serviceId="invisalign" />
         <ServiceSection serviceId="orthodontics" />
         <ServiceSection serviceId="sedation" />
         <ServiceSection serviceId="technology" />

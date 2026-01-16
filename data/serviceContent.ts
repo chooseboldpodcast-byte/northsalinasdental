@@ -3,7 +3,7 @@ import { ServiceContentMap } from '@/types/serviceTypes';
 export const serviceContent: any = {
   cleaning: {
     en: {
-      title: "Cleaning & Prevention",
+      title: "Cleaning & Prevention in Salinas, CA",
       description: "Regular cleanings and preventive care are the foundation of excellent oral health. Our proactive approach helps you avoid costly procedures while keeping your smile healthy and bright for years to come. We use state-of-the-art technology to detect issues early and provide gentle, thorough cleanings that leave your teeth feeling fresh.",
       treatmentsTitle: "Our Preventive Services Include:",
       treatments: [
@@ -48,7 +48,7 @@ export const serviceContent: any = {
       // Suggested image: https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800 (Dental cleaning)
     },
     es: {
-      title: "Limpieza y Prevención",
+      title: "Limpieza y Prevención en Salinas, CA",
       description: "Las limpiezas regulares y el cuidado preventivo son la base de una excelente salud bucal. Nuestro enfoque proactivo le ayuda a evitar procedimientos costosos mientras mantiene su sonrisa saludable y brillante durante años. Utilizamos tecnología de vanguardia para detectar problemas temprano y proporcionar limpiezas suaves y exhaustivas que dejan sus dientes frescos.",
       treatmentsTitle: "Nuestros Servicios Preventivos Incluyen:",
       treatments: [
@@ -95,7 +95,7 @@ export const serviceContent: any = {
 
   family: {
     en: {
-      title: "Family Dentistry",
+      title: "Family Dentistry in Salinas, CA",
       description: "From toddlers to grandparents, we provide comprehensive dental care for every member of your family. Our warm, welcoming environment makes dental visits comfortable and stress-free for patients of all ages. We believe in building lasting relationships with families and helping establish healthy dental habits that last a lifetime.",
       treatmentsTitle: "Family Services We Provide:",
       treatments: [
@@ -140,7 +140,7 @@ export const serviceContent: any = {
       // Suggested image: https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800 (Family at dentist)
     },
     es: {
-      title: "Odontología Familiar",
+      title: "Odontología Familiar en Salinas, CA",
       description: "Desde niños pequeños hasta abuelos, brindamos atención dental integral para cada miembro de su familia. Nuestro ambiente cálido y acogedor hace que las visitas dentales sean cómodas y sin estrés para pacientes de todas las edades. Creemos en construir relaciones duraderas con las familias y ayudar a establecer hábitos dentales saludables que duren toda la vida.",
       treatmentsTitle: "Servicios Familiares que Proporcionamos:",
       treatments: [
@@ -187,7 +187,7 @@ export const serviceContent: any = {
 
   cosmetic: {
     en: {
-      title: "Cosmetic Dentistry",
+      title: "Cosmetic Dentistry in Salinas, CA",
       description: "Your smile is one of your most powerful assets. Whether you want whiter teeth, a straighter appearance, or a complete smile makeover, our cosmetic treatments help you feel confident in every interaction. We combine artistry with advanced dental techniques to create naturally beautiful results that enhance your unique features.",
       treatmentsTitle: "Cosmetic Treatments We Offer:",
       treatments: [
@@ -232,7 +232,7 @@ export const serviceContent: any = {
       // Suggested image: https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800 (Beautiful smile)
     },
     es: {
-      title: "Odontología Cosmética",
+      title: "Odontología Cosmética en Salinas, CA",
       description: "Su sonrisa es uno de sus activos más poderosos. Ya sea que desee dientes más blancos, una apariencia más recta o una transformación completa de la sonrisa, nuestros tratamientos cosméticos le ayudan a sentirse seguro en cada interacción. Combinamos arte con técnicas dentales avanzadas para crear resultados naturalmente hermosos que realzan sus características únicas.",
       treatmentsTitle: "Tratamientos Cosméticos que Ofrecemos:",
       treatments: [
@@ -279,7 +279,7 @@ export const serviceContent: any = {
 
   replacement: {
     en: {
-      title: "Tooth Replacement",
+      title: "Tooth Replacement in Salinas, CA",
       description: "Missing teeth affect both function and appearance. We offer advanced solutions including dental implants, bridges, and dentures to restore your complete smile and ability to eat, speak, and laugh without hesitation. Our tooth replacement options are designed to look, feel, and function just like your natural teeth.",
       treatmentsTitle: "Replacement Options We Provide:",
       treatments: [
@@ -324,7 +324,7 @@ export const serviceContent: any = {
       // Suggested image: https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800 (Dental implant)
     },
     es: {
-      title: "Reemplazo de Dientes",
+      title: "Reemplazo de Dientes en Salinas, CA",
       description: "Los dientes faltantes afectan tanto la función como la apariencia. Ofrecemos soluciones avanzadas que incluyen implantes dentales, puentes y dentaduras para restaurar su sonrisa completa y su capacidad de comer, hablar y reír sin dudarlo. Nuestras opciones de reemplazo de dientes están diseñadas para verse, sentirse y funcionar como sus dientes naturales.",
       treatmentsTitle: "Opciones de Reemplazo que Proporcionamos:",
       treatments: [
@@ -371,7 +371,7 @@ export const serviceContent: any = {
 
   extraction: {
     en: {
-      title: "Extraction & Preservation",
+      title: "Extraction & Preservation in Salinas, CA",
       description: "Sometimes removing a tooth is necessary for your overall oral health. From wisdom teeth to overcrowded teeth, we perform extractions with precision and care, always prioritizing bone preservation for future treatment options. Our gentle techniques and sedation options ensure a comfortable experience.",
       treatmentsTitle: "Extraction Services Include:",
       treatments: [
@@ -416,7 +416,7 @@ export const serviceContent: any = {
       // Suggested image: https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800 (Dental procedure)
     },
     es: {
-      title: "Extracción y Preservación",
+      title: "Extracción y Preservación en Salinas, CA",
       description: "A veces es necesario extraer un diente para su salud bucal general. Desde muelas del juicio hasta dientes apiñados, realizamos extracciones con precisión y cuidado, siempre priorizando la preservación ósea para futuras opciones de tratamiento. Nuestras técnicas suaves y opciones de sedación aseguran una experiencia cómoda.",
       treatmentsTitle: "Los Servicios de Extracción Incluyen:",
       treatments: [
@@ -461,9 +461,280 @@ export const serviceContent: any = {
     }
   },
 
+  veneers: {
+    en: {
+      title: "Porcelain Veneers in Salinas, CA",
+      description: "Veneers offer an excellent way to enhance your smile while preserving most of your tooth's natural structure. These custom-crafted porcelain shells are designed to match the exact shape and contour of each tooth, providing a seamless, natural appearance. Whether you're dealing with chips, cracks, discoloration, or misshapen teeth, veneers can deliver the beautiful, confident smile you've always wanted.",
+      treatmentsTitle: "Ideal Candidates for Veneers:",
+      treatments: [
+        "Misshapen teeth that need improved contour and symmetry",
+        "Cracked or fractured teeth from injury or wear",
+        "Chipped or broken teeth requiring restoration",
+        "Worn teeth due to grinding or bruxism",
+        "Discolored teeth that don't respond to whitening treatments",
+        "Minor gaps or spacing between teeth",
+        "Uneven or irregular tooth surfaces"
+      ],
+      benefitsTitle: "Benefits of Porcelain Veneers:",
+      benefits: [
+        "Durable and long-lasting with proper care—often 10-15 years or more",
+        "Natural appearance that mimics real tooth enamel",
+        "Stain-resistant porcelain maintains brightness over time",
+        "Minimally invasive compared to crowns",
+        "Customized to match your desired shade and shape"
+      ],
+      faqTitle: "Frequently Asked Questions",
+      faqs: [
+        {
+          question: "How long do veneers last?",
+          answer: "With proper care and good oral hygiene, porcelain veneers typically last 10-15 years or longer. Avoiding habits like biting hard objects and wearing a night guard if you grind your teeth can help extend their lifespan."
+        },
+        {
+          question: "What is the veneer procedure like?",
+          answer: "The process typically requires two visits. During the first visit, we prepare your teeth by removing a thin layer of enamel and take precise impressions. Your custom veneers are then crafted in a dental laboratory. At your second visit, we bond the veneers to your teeth and make any final adjustments for a perfect fit."
+        },
+        {
+          question: "Do veneers look natural?",
+          answer: "Yes! Modern porcelain veneers are crafted to perfectly mimic natural tooth enamel, including its translucency and light-reflecting properties. We customize the shade, shape, and size to complement your facial features and create a naturally beautiful smile."
+        },
+        {
+          question: "Are veneers right for me?",
+          answer: "Veneers are an excellent option for many cosmetic concerns. During your consultation, we'll evaluate your oral health, discuss your goals, and determine if veneers are the best solution for achieving your ideal smile. Call us at 831.449.8363 to schedule your consultation."
+        }
+      ],
+      ctaButton: "Schedule Your Consultation",
+      image: "/images/services/veneers-detail.jpg"
+    },
+    es: {
+      title: "Carillas de Porcelana en Salinas, CA",
+      description: "Las carillas ofrecen una excelente manera de mejorar su sonrisa mientras preservan la mayor parte de la estructura natural de sus dientes. Estas láminas de porcelana personalizadas están diseñadas para coincidir exactamente con la forma y contorno de cada diente, proporcionando una apariencia natural y perfecta. Ya sea que tenga astillas, grietas, decoloración o dientes mal formados, las carillas pueden brindarle la sonrisa hermosa y segura que siempre ha deseado.",
+      treatmentsTitle: "Candidatos Ideales para Carillas:",
+      treatments: [
+        "Dientes mal formados que necesitan mejor contorno y simetría",
+        "Dientes agrietados o fracturados por lesión o desgaste",
+        "Dientes astillados o rotos que requieren restauración",
+        "Dientes desgastados debido al rechinar o bruxismo",
+        "Dientes descoloridos que no responden a tratamientos de blanqueamiento",
+        "Pequeños espacios o separaciones entre dientes",
+        "Superficies dentales irregulares o desiguales"
+      ],
+      benefitsTitle: "Beneficios de las Carillas de Porcelana:",
+      benefits: [
+        "Duraderas y de larga duración con el cuidado adecuado—a menudo 10-15 años o más",
+        "Apariencia natural que imita el esmalte dental real",
+        "La porcelana resistente a manchas mantiene el brillo con el tiempo",
+        "Mínimamente invasivas comparadas con las coronas",
+        "Personalizadas para coincidir con el tono y forma deseados"
+      ],
+      faqTitle: "Preguntas Frecuentes",
+      faqs: [
+        {
+          question: "¿Cuánto duran las carillas?",
+          answer: "Con el cuidado adecuado y buena higiene oral, las carillas de porcelana típicamente duran de 10 a 15 años o más. Evitar hábitos como morder objetos duros y usar un protector nocturno si rechina los dientes puede ayudar a extender su vida útil."
+        },
+        {
+          question: "¿Cómo es el procedimiento de carillas?",
+          answer: "El proceso típicamente requiere dos visitas. Durante la primera visita, preparamos sus dientes removiendo una fina capa de esmalte y tomamos impresiones precisas. Sus carillas personalizadas se fabrican en un laboratorio dental. En su segunda visita, adherimos las carillas a sus dientes y hacemos los ajustes finales para un ajuste perfecto."
+        },
+        {
+          question: "¿Las carillas se ven naturales?",
+          answer: "¡Sí! Las carillas de porcelana modernas están diseñadas para imitar perfectamente el esmalte dental natural, incluyendo su translucidez y propiedades de reflexión de luz. Personalizamos el tono, forma y tamaño para complementar sus rasgos faciales y crear una sonrisa naturalmente hermosa."
+        },
+        {
+          question: "¿Son las carillas adecuadas para mí?",
+          answer: "Las carillas son una excelente opción para muchas preocupaciones cosméticas. Durante su consulta, evaluaremos su salud oral, discutiremos sus objetivos y determinaremos si las carillas son la mejor solución para lograr su sonrisa ideal. Llámenos al 831.449.8363 para programar su consulta."
+        }
+      ],
+      ctaButton: "Programe Su Consulta",
+      image: "/images/services/veneers-detail.jpg"
+    }
+  },
+
+  "same-day-crowns": {
+    en: {
+      title: "Same Day Crowns in Salinas, CA",
+      description: "Experience the convenience of modern dentistry with our CEREC same-day crown technology. Using advanced computer-aided design and precision milling, we create custom ceramic crowns, inlays, onlays, and other restorations right in our office—all in a single appointment. No more messy impressions, temporary crowns, or waiting weeks for your permanent restoration.",
+      treatmentsTitle: "How Same Day Crowns Work:",
+      treatments: [
+        "Digital scanning captures precise 3D images of your tooth—no gooey impressions",
+        "Computer-aided design creates your custom restoration on-screen",
+        "In-office milling machine crafts your crown from dental-grade ceramic",
+        "Same-day placement means you leave with your permanent crown",
+        "Works for crowns, veneers, inlays, and onlays",
+        "Color-matched to blend seamlessly with your natural teeth"
+      ],
+      benefitsTitle: "Advantages of CEREC Technology:",
+      benefits: [
+        "Complete your restoration in one visit—no second appointment needed",
+        "Skip the temporary crown and its potential complications",
+        "Digital impressions are more comfortable than traditional molds",
+        "Highly precise fit thanks to detailed 3D imaging",
+        "Metal-free ceramic material eliminates allergy concerns",
+        "Minimal tooth preparation preserves more natural structure",
+        "Same strength and durability as traditional lab-made crowns"
+      ],
+      faqTitle: "Frequently Asked Questions",
+      faqs: [
+        {
+          question: "How long does a same-day crown appointment take?",
+          answer: "Most same-day crown procedures are completed in about 1-2 hours. This includes the digital scan, design, milling, and final placement. You'll walk out with your permanent restoration the same day."
+        },
+        {
+          question: "Are same-day crowns as durable as traditional crowns?",
+          answer: "Yes! CEREC crowns are made from the same high-quality dental ceramic used in traditional lab-fabricated crowns. They offer the same strength, durability, and natural appearance, with the added benefit of convenience."
+        },
+        {
+          question: "Is the digital scanning process uncomfortable?",
+          answer: "Not at all. Digital scanning uses a small handheld wand that captures images of your teeth without any discomfort. It's much more pleasant than biting into traditional impression material."
+        },
+        {
+          question: "Who is a good candidate for same-day crowns?",
+          answer: "Most patients needing crowns, inlays, or onlays are excellent candidates for CEREC technology. During your consultation, we'll evaluate your specific needs and confirm if same-day restoration is right for you. Call us at 831.449.8363 to learn more."
+        }
+      ],
+      ctaButton: "Schedule Your Visit",
+      image: "/images/services/same-day-crowns-detail.jpg"
+    },
+    es: {
+      title: "Coronas en el Mismo Día en Salinas, CA",
+      description: "Experimente la conveniencia de la odontología moderna con nuestra tecnología de coronas CEREC del mismo día. Utilizando diseño asistido por computadora avanzado y fresado de precisión, creamos coronas de cerámica personalizadas, inlays, onlays y otras restauraciones directamente en nuestro consultorio—todo en una sola cita. Sin más impresiones desagradables, coronas temporales o esperas de semanas por su restauración permanente.",
+      treatmentsTitle: "Cómo Funcionan las Coronas del Mismo Día:",
+      treatments: [
+        "El escaneo digital captura imágenes 3D precisas de su diente—sin impresiones pastosas",
+        "El diseño asistido por computadora crea su restauración personalizada en pantalla",
+        "La fresadora en consultorio fabrica su corona de cerámica de grado dental",
+        "La colocación el mismo día significa que se va con su corona permanente",
+        "Funciona para coronas, carillas, inlays y onlays",
+        "Color combinado para mezclarse perfectamente con sus dientes naturales"
+      ],
+      benefitsTitle: "Ventajas de la Tecnología CEREC:",
+      benefits: [
+        "Complete su restauración en una visita—sin necesidad de segunda cita",
+        "Evite la corona temporal y sus posibles complicaciones",
+        "Las impresiones digitales son más cómodas que los moldes tradicionales",
+        "Ajuste altamente preciso gracias a las imágenes 3D detalladas",
+        "Material cerámico libre de metal elimina preocupaciones de alergias",
+        "Preparación dental mínima preserva más estructura natural",
+        "Misma resistencia y durabilidad que las coronas tradicionales de laboratorio"
+      ],
+      faqTitle: "Preguntas Frecuentes",
+      faqs: [
+        {
+          question: "¿Cuánto tiempo toma una cita de corona del mismo día?",
+          answer: "La mayoría de los procedimientos de corona del mismo día se completan en aproximadamente 1-2 horas. Esto incluye el escaneo digital, diseño, fresado y colocación final. Saldrá con su restauración permanente el mismo día."
+        },
+        {
+          question: "¿Son las coronas del mismo día tan duraderas como las tradicionales?",
+          answer: "¡Sí! Las coronas CEREC están hechas de la misma cerámica dental de alta calidad utilizada en las coronas tradicionales fabricadas en laboratorio. Ofrecen la misma resistencia, durabilidad y apariencia natural, con el beneficio adicional de la conveniencia."
+        },
+        {
+          question: "¿Es incómodo el proceso de escaneo digital?",
+          answer: "Para nada. El escaneo digital utiliza una pequeña varita de mano que captura imágenes de sus dientes sin ninguna incomodidad. Es mucho más agradable que morder el material de impresión tradicional."
+        },
+        {
+          question: "¿Quién es un buen candidato para coronas del mismo día?",
+          answer: "La mayoría de los pacientes que necesitan coronas, inlays u onlays son excelentes candidatos para la tecnología CEREC. Durante su consulta, evaluaremos sus necesidades específicas y confirmaremos si la restauración del mismo día es adecuada para usted. Llámenos al 831.449.8363 para más información."
+        }
+      ],
+      ctaButton: "Programe Su Visita",
+      image: "/images/services/same-day-crowns-detail.jpg"
+    }
+  },
+
+  invisalign: {
+    en: {
+      title: "Invisalign Clear Aligners in Salinas, CA",
+      description: "Say goodbye to traditional metal braces. Invisalign offers a modern, nearly invisible way to straighten your teeth using smooth, comfortable plastic aligners custom-made for you. These clear trays gradually shift your teeth into their ideal positions, giving you the confident smile you've always wanted—without the brackets and wires.",
+      treatmentsTitle: "Why Choose Invisalign:",
+      treatments: [
+        "Virtually invisible aligners for discreet treatment",
+        "Custom-made trays designed specifically for your smile",
+        "Removable for eating, brushing, and flossing",
+        "Smooth, comfortable plastic with no metal irritation",
+        "Gradual, predictable tooth movement",
+        "Fewer office visits than traditional braces",
+        "Ideal for adults and teens committed to wearing aligners"
+      ],
+      benefitsTitle: "Benefits for Adults and Teens:",
+      benefits: [
+        "Straighten teeth without anyone noticing your treatment",
+        "Remove aligners to enjoy your favorite foods without restrictions",
+        "Easy cleaning—simply brush and floss normally",
+        "No food getting stuck in brackets or wires",
+        "More comfortable than traditional metal braces",
+        "See your projected results before treatment begins"
+      ],
+      faqTitle: "Frequently Asked Questions",
+      faqs: [
+        {
+          question: "Does Invisalign hurt?",
+          answer: "Most patients feel some tightness or mild pressure when switching to a new aligner. This sensation typically fades within a few days and is actually a sign that your aligners are working to move your teeth into position."
+        },
+        {
+          question: "How many hours a day should I wear my aligners?",
+          answer: "For optimal results, wear your Invisalign aligners at least 22 hours per day. Remove them only for eating, drinking anything other than water, brushing, and flossing."
+        },
+        {
+          question: "How do I maintain my results after treatment?",
+          answer: "After completing your Invisalign treatment, you'll wear a retainer to keep your teeth in their new positions. This prevents them from gradually shifting back. We offer various retainer options to fit your lifestyle."
+        },
+        {
+          question: "Does dental insurance cover Invisalign?",
+          answer: "Many dental insurance plans cover a portion of Invisalign treatment, similar to traditional braces. We recommend contacting your insurance provider to check your orthodontic coverage. Call us at 831.449.8363 to discuss financing options."
+        }
+      ],
+      ctaButton: "Start Your Invisalign Journey",
+      image: "/images/services/invisalign-detail.jpg"
+    },
+    es: {
+      title: "Alineadores Transparentes Invisalign en Salinas, CA",
+      description: "Despídase de los brackets metálicos tradicionales. Invisalign ofrece una forma moderna y casi invisible de enderezar sus dientes usando alineadores de plástico suaves y cómodos hechos a su medida. Estas bandejas transparentes mueven gradualmente sus dientes a sus posiciones ideales, dándole la sonrisa segura que siempre ha deseado—sin brackets ni alambres.",
+      treatmentsTitle: "Por Qué Elegir Invisalign:",
+      treatments: [
+        "Alineadores prácticamente invisibles para tratamiento discreto",
+        "Bandejas personalizadas diseñadas específicamente para su sonrisa",
+        "Removibles para comer, cepillarse y usar hilo dental",
+        "Plástico suave y cómodo sin irritación metálica",
+        "Movimiento dental gradual y predecible",
+        "Menos visitas al consultorio que los brackets tradicionales",
+        "Ideal para adultos y adolescentes comprometidos a usar los alineadores"
+      ],
+      benefitsTitle: "Beneficios para Adultos y Adolescentes:",
+      benefits: [
+        "Enderece sus dientes sin que nadie note su tratamiento",
+        "Retire los alineadores para disfrutar sus comidas favoritas sin restricciones",
+        "Limpieza fácil—simplemente cepíllese y use hilo dental normalmente",
+        "Sin comida atascada en brackets o alambres",
+        "Más cómodo que los brackets metálicos tradicionales",
+        "Vea sus resultados proyectados antes de comenzar el tratamiento"
+      ],
+      faqTitle: "Preguntas Frecuentes",
+      faqs: [
+        {
+          question: "¿Duele Invisalign?",
+          answer: "La mayoría de los pacientes sienten algo de tensión o presión leve al cambiar a un nuevo alineador. Esta sensación típicamente desaparece en unos días y es en realidad una señal de que sus alineadores están funcionando para mover sus dientes a su posición."
+        },
+        {
+          question: "¿Cuántas horas al día debo usar mis alineadores?",
+          answer: "Para resultados óptimos, use sus alineadores Invisalign al menos 22 horas por día. Retírelos solo para comer, beber cualquier cosa que no sea agua, cepillarse y usar hilo dental."
+        },
+        {
+          question: "¿Cómo mantengo mis resultados después del tratamiento?",
+          answer: "Después de completar su tratamiento Invisalign, usará un retenedor para mantener sus dientes en sus nuevas posiciones. Esto evita que se muevan gradualmente de vuelta. Ofrecemos varias opciones de retenedores para adaptarse a su estilo de vida."
+        },
+        {
+          question: "¿El seguro dental cubre Invisalign?",
+          answer: "Muchos planes de seguro dental cubren una porción del tratamiento Invisalign, similar a los brackets tradicionales. Recomendamos contactar a su proveedor de seguros para verificar su cobertura ortodóncica. Llámenos al 831.449.8363 para discutir opciones de financiamiento."
+        }
+      ],
+      ctaButton: "Comience Su Viaje Invisalign",
+      image: "/images/services/invisalign-detail.jpg"
+    }
+  },
+
   orthodontics: {
     en: {
-      title: "Orthodontics",
+      title: "Orthodontics in Salinas, CA",
       description: "Straight teeth aren't just about aesthetics—proper alignment improves your bite, oral hygiene, and long-term dental health. We offer modern orthodontic solutions that blend beauty with functional results, including clear aligners and traditional braces for patients of all ages.",
       treatmentsTitle: "Orthodontic Options:",
       treatments: [
@@ -508,7 +779,7 @@ export const serviceContent: any = {
       // Suggested image: https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800 (Orthodontic treatment)
     },
     es: {
-      title: "Ortodoncia",
+      title: "Ortodoncia en Salinas, CA",
       description: "Los dientes rectos no son solo estética: la alineación adecuada mejora su mordida, higiene bucal y salud dental a largo plazo. Ofrecemos soluciones ortodóncticas modernas que combinan belleza con resultados funcionales, incluyendo alineadores transparentes y frenillos tradicionales para pacientes de todas las edades.",
       treatmentsTitle: "Opciones de Ortodoncia:",
       treatments: [
@@ -555,7 +826,7 @@ export const serviceContent: any = {
 
   sedation: {
     en: {
-      title: "Sedation Dentistry",
+      title: "Sedation Dentistry in Salinas, CA",
       description: "Dental anxiety shouldn't keep you from the care you need. We offer multiple sedation options tailored to your comfort level, ensuring a relaxed and anxiety-free experience during your treatment. Our trained team prioritizes your safety while helping you overcome fear and receive the dental care you deserve.",
       treatmentsTitle: "Sedation Options Available:",
       treatments: [
@@ -600,7 +871,7 @@ export const serviceContent: any = {
       // Suggested image: https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800 (Calm dental environment)
     },
     es: {
-      title: "Odontología con Sedación",
+      title: "Odontología con Sedación en Salinas, CA",
       description: "La ansiedad dental no debe impedirle recibir la atención que necesita. Ofrecemos múltiples opciones de sedación adaptadas a su nivel de comodidad, asegurando una experiencia relajada y sin ansiedad durante su tratamiento. Nuestro equipo capacitado prioriza su seguridad mientras le ayuda a superar el miedo y recibir la atención dental que merece.",
       treatmentsTitle: "Opciones de Sedación Disponibles:",
       treatments: [
@@ -647,7 +918,7 @@ export const serviceContent: any = {
 
   technology: {
     en: {
-      title: "Advanced Technology",
+      title: "Advanced Technology in Salinas, CA",
       description: "We invest in proven, state-of-the-art technology that enhances accuracy, comfort, and treatment outcomes. From digital imaging to laser dentistry, our advanced tools deliver superior care with minimal discomfort. Technology allows us to diagnose problems earlier, treat them more precisely, and give you a better overall experience.",
       treatmentsTitle: "Technologies We Use:",
       treatments: [
@@ -692,7 +963,7 @@ export const serviceContent: any = {
       // Suggested image: https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800 (Dental technology)
     },
     es: {
-      title: "Tecnología Avanzada",
+      title: "Tecnología Avanzada en Salinas, CA",
       description: "Invertimos en tecnología de vanguardia comprobada que mejora la precisión, comodidad y resultados del tratamiento. Desde imágenes digitales hasta odontología láser, nuestras herramientas avanzadas brindan atención superior con molestias mínimas. La tecnología nos permite diagnosticar problemas más temprano, tratarlos con mayor precisión y brindarle una mejor experiencia general.",
       treatmentsTitle: "Tecnologías que Usamos:",
       treatments: [

@@ -30,7 +30,7 @@ export default function ServicesGrid() {
 
   const content = {
     en: {
-      overline: "Comprehensive Care",
+      overline: "Comprehensive Dental Care in Salinas, CA",
       heading: "Everything your smile needs.",
       subheading: "From routine prevention to complete makeovers, we offer a full spectrum of dental services under one roof.",
       learnMore: "Learn more",
@@ -66,6 +66,24 @@ export default function ServicesGrid() {
           image: "/images/services/extraction.jpg"
         },
         {
+          title: "Veneers",
+          description: "Transform your smile with custom porcelain veneers. These thin, durable shells are expertly crafted to correct chips, cracks, discoloration, and misshapen teeth—giving you a natural-looking, radiant smile that lasts for years.",
+          href: "/services#veneers",
+          image: "/images/services/veneers.jpg"
+        },
+        {
+          title: "Same Day Crowns",
+          description: "Get a perfectly fitted dental crown in just one visit with our advanced CEREC technology. Digital scanning and in-office milling eliminate the wait—no temporary crowns, no multiple appointments, just precise, beautiful results the same day.",
+          href: "/services#same-day-crowns",
+          image: "/images/services/same-day-crowns.jpg"
+        },
+        {
+          title: "Invisalign",
+          description: "Achieve a straighter smile discreetly with Invisalign clear aligners. These custom-made, virtually invisible trays gradually shift your teeth into place—no metal brackets or wires required. Removable for eating and easy cleaning, Invisalign fits seamlessly into your lifestyle.",
+          href: "/services#invisalign",
+          image: "/images/services/invisalign.jpg"
+        },
+        {
           title: "Orthodontics",
           description: "Straight teeth aren't just about aesthetics—proper alignment improves your bite, oral hygiene, and long-term dental health. We offer modern orthodontic solutions that blend beauty with functional results.",
           href: "/services#orthodontics",
@@ -86,7 +104,7 @@ export default function ServicesGrid() {
       ]
     },
     es: {
-      overline: "Atención Integral",
+      overline: "Cuidado Dental Integral en Salinas, CA",
       heading: "Todo lo que su sonrisa necesita.",
       subheading: "Desde prevención de rutina hasta transformaciones completas, ofrecemos un espectro completo de servicios dentales bajo un mismo techo.",
       learnMore: "Más información",
@@ -120,6 +138,24 @@ export default function ServicesGrid() {
           description: "A veces es necesario extraer un diente para su salud bucal general. Desde muelas del juicio hasta dientes apiñados, realizamos extracciones con precisión y cuidado, siempre priorizando la preservación ósea para futuras opciones de tratamiento.",
           href: "/services#extraction",
           image: "/images/services/extraction.jpg"
+        },
+        {
+          title: "Carillas Dentales",
+          description: "Transforme su sonrisa con carillas de porcelana personalizadas. Estas finas y duraderas láminas están diseñadas para corregir astillas, grietas, decoloración y dientes mal formados, brindándole una sonrisa radiante y de aspecto natural que dura años.",
+          href: "/services#veneers",
+          image: "/images/services/veneers.jpg"
+        },
+        {
+          title: "Coronas en el Mismo Día",
+          description: "Obtenga una corona dental perfectamente ajustada en una sola visita con nuestra avanzada tecnología CEREC. El escaneo digital y el fresado en consultorio eliminan la espera—sin coronas temporales, sin múltiples citas, solo resultados precisos y hermosos el mismo día.",
+          href: "/services#same-day-crowns",
+          image: "/images/services/same-day-crowns.jpg"
+        },
+        {
+          title: "Invisalign",
+          description: "Logre una sonrisa más recta de forma discreta con los alineadores transparentes Invisalign. Estas bandejas personalizadas y prácticamente invisibles mueven gradualmente sus dientes a su lugar—sin brackets ni alambres metálicos. Removibles para comer y fáciles de limpiar, Invisalign se adapta perfectamente a su estilo de vida.",
+          href: "/services#invisalign",
+          image: "/images/services/invisalign.jpg"
         },
         {
           title: "Ortodoncia",
