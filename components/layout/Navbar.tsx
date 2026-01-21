@@ -91,7 +91,7 @@ export default function Navbar() {
               {links.map((link) =>
                 link.dropdown ? (
                   <div key={link.label} className="relative group">
-                    <button className="text-white hover:text-primary-200 transition-colors duration-200 text-xs font-bold flex items-center gap-1">
+                    <button className="text-white hover:text-primary-200 transition-colors duration-200 text-sm font-bold flex items-center gap-1">
                       {link.label}
                       <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform duration-200" />
                     </button>
@@ -111,7 +111,7 @@ export default function Navbar() {
                   <Link
                     key={link.href! + link.label}
                     href={link.href!}
-                    className="text-white hover:text-primary-200 transition-colors duration-200 text-xs font-bold"
+                    className="text-white hover:text-primary-200 transition-colors duration-200 text-sm font-bold"
                   >
                     {link.label}
                   </Link>

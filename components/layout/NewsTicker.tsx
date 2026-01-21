@@ -23,10 +23,10 @@ export default function NewsTicker() {
   );
 
   return (
-    <div className="bg-primary-700 h-6 overflow-hidden relative">
+    <div className="bg-white/200 h-6 overflow-hidden relative">
       <div className="flex items-center h-full">
         <div
-          className="flex items-center whitespace-nowrap text-white text-[13.5px] font-bold will-change-transform animate-ticker-smooth"
+          className="flex items-center whitespace-nowrap text-secondary-700 text-[18px] font-semibold will-change-transform animate-ticker-smooth"
           style={{ gap: '3rem', backfaceVisibility: 'hidden' }}
         >
           {/* Two identical sets for seamless loop */}

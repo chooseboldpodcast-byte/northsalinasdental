@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Check, Plus, Minus } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { useAppointment } from "@/context/AppointmentContext";
 import { serviceContent } from "@/data/serviceContent";
 
 interface ServiceSectionProps {
@@ -31,6 +32,7 @@ interface ServiceContent {
 
 export default function ServiceSection({ serviceId }: ServiceSectionProps) {
   const { language } = useLanguage();
+  const { openAppointmentModal } = useAppointment();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const service = serviceContent[serviceId]?.[language] as ServiceContent | undefined;
@@ -125,12 +127,12 @@ export default function ServiceSection({ serviceId }: ServiceSectionProps) {
             </div>
 
             {/* CTA Button */}
-            <a
-              href="#appointment"
+            <button
+              onClick={openAppointmentModal}
               className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold shadow-card hover:shadow-elevated transition-all duration-300 transform hover:scale-105"
             >
               {service.ctaButton}
-            </a>
+            </button>
           </motion.div>
         </div>
 
