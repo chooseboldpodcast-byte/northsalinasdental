@@ -97,7 +97,7 @@ export default function FinancialInformationPage() {
         </section>
 
         {/* Main Content */}
-        <section className="py-16">
+        <section className="pt-4 pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Insurance Section */}

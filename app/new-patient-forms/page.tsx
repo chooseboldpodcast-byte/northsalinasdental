@@ -78,7 +78,7 @@ export default function NewPatientFormsPage() {
         </section>
 
         {/* Main Content */}
-        <section className="py-16">
+        <section className="pt-4 pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Introduction */}
             <div className="prose prose-lg max-w-none mb-12">

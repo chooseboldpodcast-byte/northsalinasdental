@@ -309,7 +309,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Content */}
-        <section className="py-16">
+        <section className="pt-4 pb-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-8">
               {/* Left Column - Contact Info Card (Combined) */}
