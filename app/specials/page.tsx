@@ -28,12 +28,12 @@ export default function SpecialsPage() {
       <Navbar />
       <main className="bg-cream min-h-screen">
         {/* Hero Section */}
-        <section className="bg-primary-700 py-16">
+        <section className="bg-cream py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-serif text-white mb-4">
+            <h1 className="text-4xl md:text-5xl font-serif text-gray-900 mb-4">
               {t.title}
             </h1>
-            <p className="text-primary-200 text-lg">
+            <p className="text-gray-600 text-lg">
               {t.subtitle}
             </p>
           </div>
