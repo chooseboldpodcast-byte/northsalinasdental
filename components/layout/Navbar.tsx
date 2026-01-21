@@ -19,7 +19,21 @@ interface NavLinks {
 const navLinks: NavLinks = {
   en: [
     { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
+    {
+      label: "Services",
+      dropdown: [
+        { href: "/services#cleaning", label: "Cleaning & Prevention" },
+        { href: "/services#family", label: "Family Dentistry" },
+        { href: "/services#cosmetic", label: "Cosmetic Dentistry" },
+        { href: "/services#veneers", label: "Veneers" },
+        { href: "/services#same-day-crowns", label: "Same-Day Crowns" },
+        { href: "/services#invisalign", label: "Invisalign" },
+        { href: "/services#orthodontics", label: "Orthodontics" },
+        { href: "/services#replacement", label: "Tooth Replacement" },
+        { href: "/services#extraction", label: "Extractions" },
+        { href: "/services#sedation", label: "Sedation Dentistry" },
+      ],
+    },
     { href: "/team", label: "Our Team" },
     {
       label: "New Patients",
@@ -34,7 +48,21 @@ const navLinks: NavLinks = {
   ],
   es: [
     { href: "/", label: "Inicio" },
-    { href: "/services", label: "Servicios" },
+    {
+      label: "Servicios",
+      dropdown: [
+        { href: "/services#cleaning", label: "Limpieza y Prevención" },
+        { href: "/services#family", label: "Odontología Familiar" },
+        { href: "/services#cosmetic", label: "Odontología Cosmética" },
+        { href: "/services#veneers", label: "Carillas" },
+        { href: "/services#same-day-crowns", label: "Coronas en el Mismo Día" },
+        { href: "/services#invisalign", label: "Invisalign" },
+        { href: "/services#orthodontics", label: "Ortodoncia" },
+        { href: "/services#replacement", label: "Reemplazo de Dientes" },
+        { href: "/services#extraction", label: "Extracciones" },
+        { href: "/services#sedation", label: "Odontología con Sedación" },
+      ],
+    },
     { href: "/team", label: "Nuestro Equipo" },
     {
       label: "Nuevos Pacientes",

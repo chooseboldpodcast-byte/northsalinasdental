@@ -16,17 +16,17 @@ export default function NewsTicker() {
     <>
       {items.map((text, index) => (
         <span key={`${keyPrefix}${index}`} className="px-12 shrink-0">
-          ★ {text}
+          <span className="text-secondary-500">★</span> {text}
         </span>
       ))}
     </>
   );
 
   return (
-    <div className="bg-white/200 h-6 overflow-hidden relative">
+    <div className="bg-primary-50 h-8 overflow-hidden relative border-b border-primary-100">
       <div className="flex items-center h-full">
         <div
-          className="flex items-center whitespace-nowrap text-secondary-700 text-[18px] font-semibold will-change-transform animate-ticker-smooth"
+          className="flex items-center whitespace-nowrap text-primary-700 text-base font-medium will-change-transform animate-ticker-smooth"
           style={{ gap: '3rem', backfaceVisibility: 'hidden' }}
         >
           {/* Two identical sets for seamless loop */}
