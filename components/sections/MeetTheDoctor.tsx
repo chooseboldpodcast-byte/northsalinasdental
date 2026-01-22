@@ -132,7 +132,7 @@ export default function MeetTheDoctor() {
             {/* CTA Button */}
             <div className="text-center">
               <a
-                href="/our-team"
+                href="/team"
                 className="hover:bg-secondary-50 text-primary-200 border-2 border-primary-200 hover:border-secondary-300 px-8 py-3 rounded-full font-semibold transition-all duration-300"
               >
                 {t.ctaButton}
