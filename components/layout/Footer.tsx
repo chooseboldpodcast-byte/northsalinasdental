@@ -1,24 +1,54 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
 import { MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/utils";
-
-const quickLinks = [
-  { href: "/services#cosmetic", label: "Cosmetic Dentistry" },
-  { href: "/services#general", label: "General Care" },
-  { href: "/services#implants", label: "Dental Implants" },
-  { href: "/team", label: "Our Team" },
-];
-
-const hours = [
-  { day: "Mon - Thu", time: "8:00 AM - 6:00 PM" },
-  { day: "Fri - Sun", time: "Closed" },
-  {/*{ day: "Saturday", time: "9:00 AM - 2:00 PM" },
-  { day: "Sunday", time: "Closed" },*/}
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { language } = useLanguage();
+
+  const content = {
+    en: {
+      quickLinksTitle: "Quick Links",
+      quickLinks: [
+        { href: "/services#cosmetic", label: "Cosmetic Dentistry" },
+        { href: "/services#general", label: "General Care" },
+        { href: "/services#implants", label: "Dental Implants" },
+        { href: "/team", label: "Our Team" },
+      ],
+      contactTitle: "Contact",
+      hoursTitle: "Hours",
+      hours: [
+        { day: "Mon - Thu", time: "8:00 AM - 6:00 PM" },
+        { day: "Fri - Sun", time: "Closed" },
+      ],
+      copyright: `© ${currentYear} North Salinas Dental. All rights reserved.`,
+      privacyPolicy: "Privacy Policy",
+      termsOfService: "Terms of Service",
+    },
+    es: {
+      quickLinksTitle: "Enlaces Rápidos",
+      quickLinks: [
+        { href: "/services#cosmetic", label: "Odontología Cosmética" },
+        { href: "/services#general", label: "Cuidado General" },
+        { href: "/services#implants", label: "Implantes Dentales" },
+        { href: "/team", label: "Nuestro Equipo" },
+      ],
+      contactTitle: "Contacto",
+      hoursTitle: "Horario",
+      hours: [
+        { day: "Lun - Jue", time: "8:00 AM - 6:00 PM" },
+        { day: "Vie - Dom", time: "Cerrado" },
+      ],
+      copyright: `© ${currentYear} North Salinas Dental. Todos los derechos reservados.`,
+      privacyPolicy: "Política de Privacidad",
+      termsOfService: "Términos de Servicio",
+    },
+  };
+
+  const t = content[language];
 
   return (
     <footer className="bg-primary-700 text-white">
@@ -26,9 +56,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-lg text-white mb-4">Quick Links</h4>
+            <h4 className="font-serif text-lg text-white mb-4">{t.quickLinksTitle}</h4>
             <ul className="space-y-3">
-              {quickLinks.map((link) => (
+              {t.quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -43,7 +73,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-serif text-lg text-white mb-4">Contact</h4>
+            <h4 className="font-serif text-lg text-white mb-4">{t.contactTitle}</h4>
             <ul className="space-y-3">
               <li>
                 <a
@@ -75,9 +105,9 @@ export default function Footer() {
 
           {/* Hours */}
           <div>
-            <h4 className="font-serif text-lg text-white mb-4">Hours</h4>
+            <h4 className="font-serif text-lg text-white mb-4">{t.hoursTitle}</h4>
             <ul className="space-y-2">
-              {hours.map((item) => (
+              {t.hours.map((item) => (
                 <li
                   key={item.day}
                   className="flex justify-between text-sage-200"
@@ -95,18 +125,16 @@ export default function Footer() {
       <div className="border-t border-sage-600">
         <div className="container-wide py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-sage-300">
-            <p>
-              © {currentYear} North Salinas Dental. All rights reserved.
-            </p>
+            <p>{t.copyright}</p>
             <div className="flex gap-6">
               <Link
                 href="/privacy"
                 className="hover:text-white transition-colors"
               >
-                Privacy Policy
+                {t.privacyPolicy}
               </Link>
               <Link href="/terms" className="hover:text-white transition-colors">
-                Terms of Service
+                {t.termsOfService}
               </Link>
             </div>
           </div>
