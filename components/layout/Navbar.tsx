@@ -42,7 +42,7 @@ const navLinks: NavLinks = {
         { href: "/financial-information", label: "Financial Information" },
       ],
     },
-    { href: "/team", label: "Insurance" },
+    // { href: "/insurance", label: "Insurance" }, // Hidden until page is ready
     { href: "/specials", label: "Specials" },
     { href: "/contact", label: "Contact" },
   ],
@@ -71,7 +71,7 @@ const navLinks: NavLinks = {
         { href: "/financial-information", label: "Información Financiera" },
       ],
     },
-    { href: "/team", label: "Seguro" },
+    // { href: "/insurance", label: "Seguro" }, // Hidden until page is ready
     { href: "/specials", label: "Ofertas Especiales" },
     { href: "/contact", label: "Contacto" },
   ],
