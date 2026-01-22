@@ -1,44 +1,15 @@
 "use client";
+
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { useAppointment } from "@/context/AppointmentContext";
+import { homepageContent } from "@/config/content";
 
-export default function HeroExample() {
-  const { language } = useLanguage();
+export default function Hero() {
+  const { language, config } = useLanguage();
   const { openAppointmentModal } = useAppointment();
 
-  const content = {
-    en: {
-      badge: "Accepting New Patients",
-      headingBefore: "Your family's",
-      headingAccent: "dental home",
-      headingAfter: "in Salinas",
-      description: "Welcome to North Salinas Dental, Office of Dr. Ritu Bhardwaj DDS, where we create beautiful and healthy smiles by combining advanced technology with patient comfort and personalized care.",
-      ctaPrimary: "Request Appointment",
-      ctaSecondary: "Explore Services",
-      socialProof: "5-star Customer Rating",
-      floatingCard: {
-        title: "Same-Day Appointments",
-        subtitle: "Available for urgent care"
-      }
-    },
-    es: {
-      badge: "Aceptamos Nuevos Pacientes",
-      headingBefore: "El",
-      headingAccent: "hogar dental",
-      headingAfter: "de su familia en Salinas",
-      description: "Bienvenido a North Salinas Dental, donde creamos sonrisas hermosas y saludables combinando tecnología avanzada con comodidad del paciente y atención personalizada.",
-      ctaPrimary: "Solicitar Cita",
-      ctaSecondary: "Explorar Servicios",
-      socialProof: "Calificación de 5 Estrellas",
-      floatingCard: {
-        title: "Citas el Mismo Día",
-        subtitle: "Disponible para atención urgente"
-      }
-    }
-  };
-
-  const t = content[language];
+  const content = homepageContent.hero[language];
 
   return (
     <section className="relative bg-gradient-to-br from-primary-50 via-neutral-light to-secondary-50">
@@ -49,45 +20,58 @@ export default function HeroExample() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in-up">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-secondary-100 text-secondary-700 px-4 py-2 rounded-full text-sm font-medium">
-              <span className="w-2 h-2 bg-secondary-500 rounded-full animate-pulse"></span>
-              {t.badge}
-            </div>
+            {/* Badges - only render if there are badges */}
+            {content.badges.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {content.badges.map((badge, index) => (
+                  <div
+                    key={index}
+                    className="inline-flex items-center gap-2 bg-secondary-100 text-secondary-700 px-4 py-2 rounded-full text-sm font-medium"
+                  >
+                    <span className="w-2 h-2 bg-secondary-500 rounded-full animate-pulse"></span>
+                    {badge}
+                  </div>
+                ))}
+              </div>
+            )}
 
             {/* Main Heading */}
             <h1 className="font-serif text-display-1 text-primary-900">
-              {t.headingBefore}{" "}
-              <span className="text-primary-600">{t.headingAccent}</span>{" "}
-              {t.headingAfter}
+              {language === "es" ? (
+                <>El <span className="text-primary-600">hogar dental</span> de su familia en Salinas</>
+              ) : (
+                <>Your family&apos;s <span className="text-primary-600">dental home</span> in Salinas</>
+              )}
             </h1>
 
             {/* Description */}
             <p className="text-md text-gray-700 leading-relaxed max-w-xl">
-              {t.description}
+              {content.subheadline}
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <button 
-                onClick={openAppointmentModal}
-                className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold shadow-card hover:shadow-elevated transition-all duration-300 transform hover:scale-105"
-              >
-                {t.ctaPrimary}
-              </button>
+              {config.features.enableAppointmentModal && (
+                <button
+                  onClick={openAppointmentModal}
+                  className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold shadow-card hover:shadow-elevated transition-all duration-300 transform hover:scale-105"
+                >
+                  {content.primaryCta}
+                </button>
+              )}
 
               <a
                 href="/services"
                 className="bg-white hover:bg-secondary-50 text-primary-700 border-2 border-primary-200 hover:border-secondary-300 px-8 py-4 rounded-full font-semibold transition-all duration-300 inline-block"
               >
-                {t.ctaSecondary}
+                {content.secondaryCta}
               </a>
             </div>
 
             {/* Social Proof */}
             <div className="flex items-center gap-4 pt-4">
               <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
+                {[1, 2, 3, 4, 5].map((i) => (
                   <div
                     key={i}
                     className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 border-2 border-white"
@@ -100,8 +84,8 @@ export default function HeroExample() {
                     <span key={i}>★</span>
                   ))}
                 </div>
-                <p className="text-sm text-gray-600 font-medium">
-                  <span className="text-primary-700 font-bold">{t.socialProof}</span>
+                <p className="text-sm font-medium text-primary-600">
+                  {language === "es" ? "Calificación de 5 Estrellas" : "5-star Customer Rating"}
                 </p>
               </div>
             </div>
@@ -110,11 +94,10 @@ export default function HeroExample() {
           {/* Right Content */}
           <div className="relative lg:block hidden">
             <div className="relative rounded-4xl overflow-hidden shadow-elevated">
-              {/* Replace with actual image */}
               <div className="relative aspect-[4/3]">
                 <Image
                   src="/images/hero-image1.jpg"
-                  alt="North Salinas Dental Office"
+                  alt={config.practiceName}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 0vw, 50vw"
@@ -129,8 +112,12 @@ export default function HeroExample() {
                     ✓
                   </div>
                   <div>
-                    <p className="font-semibold text-primary-900">{t.floatingCard.title}</p>
-                    <p className="text-xs text-gray-600">{t.floatingCard.subtitle}</p>
+                    <p className="font-semibold text-primary-900">
+                      {language === "es" ? "Citas el Mismo Día" : "Same-Day Appointments"}
+                    </p>
+                    <p className="text-xs text-gray-600">
+                      {language === "es" ? "Disponible para atención urgente" : "Available for urgent care"}
+                    </p>
                   </div>
                 </div>
               </div>

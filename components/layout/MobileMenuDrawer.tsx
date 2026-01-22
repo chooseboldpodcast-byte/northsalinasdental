@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { X, Home, Stethoscope, Users, GraduationCap, Shield, Sparkles, Mail, MapPin, Phone, Clock } from "lucide-react";
+import { X, Home, Stethoscope, Users, Shield, Sparkles, Mail, MapPin, Phone, Clock, FileText, CreditCard, Star, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
@@ -12,7 +12,7 @@ interface MobileMenuDrawerProps {
 }
 
 export default function MobileMenuDrawer({ isOpen, onClose }: MobileMenuDrawerProps) {
-  const { t } = useLanguage();
+  const { t, config } = useLanguage();
 
   // Prevent body scroll when drawer is open
   useEffect(() => {
@@ -26,15 +26,23 @@ export default function MobileMenuDrawer({ isOpen, onClose }: MobileMenuDrawerPr
     };
   }, [isOpen]);
 
+  // Build menu links based on config
   const menuLinks = [
-    { href: "/", label: t.home, icon: Home },
-    { href: "/services", label: t.services, icon: Stethoscope },
-    { href: "/team", label: t.ourTeam, icon: Users },
-    { href: "/patient-education", label: t.patientEducation, icon: GraduationCap },
-    { href: "/insurance", label: t.insurance, icon: Shield },
-    { href: "/specials", label: t.specials, icon: Sparkles },
-    { href: "/contact", label: t.contact, icon: Mail },
-  ];
+    config.navigation.showHome && { href: "/", label: t.home, icon: Home },
+    config.navigation.showServices && { href: "/services", label: t.services, icon: Stethoscope },
+    config.navigation.showTeam && { href: "/team", label: t.ourTeam, icon: Users },
+    config.navigation.showNewPatientForms && { href: "/new-patient-forms", label: t.newPatientForms, icon: FileText },
+    config.navigation.showFinancialInfo && { href: "/financial-information", label: t.financialInfo, icon: CreditCard },
+    config.navigation.showInsurance && { href: "/insurance", label: t.insurance, icon: Shield },
+    config.navigation.showSpecials && { href: "/specials", label: t.specials, icon: Sparkles },
+    config.navigation.showReviews && { href: "/reviews", label: t.reviews, icon: Star },
+    config.navigation.showBlog && { href: "/blog", label: t.blog, icon: BookOpen },
+    config.navigation.showContact && { href: "/contact", label: t.contact, icon: Mail },
+  ].filter(Boolean) as { href: string; label: string; icon: typeof Home }[];
+
+  // Format address for display
+  const addressDisplay = `${config.address.street}, ${config.address.city}, ${config.address.state} ${config.address.zip}`;
+  const phoneLink = config.phone.replace(/[.\-\s]/g, "");
 
   return (
     <AnimatePresence>
@@ -66,7 +74,7 @@ export default function MobileMenuDrawer({ isOpen, onClose }: MobileMenuDrawerPr
             {/* Header */}
             <div className="flex items-center justify-between px-6 pb-4 border-b border-gray-100">
               <h2 className="text-lg font-serif text-gray-900">
-                {t.menu || "Menu"}
+                {t.menu}
               </h2>
               <button
                 onClick={onClose}
@@ -107,37 +115,41 @@ export default function MobileMenuDrawer({ isOpen, onClose }: MobileMenuDrawerPr
               {/* Contact Info Section */}
               <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
                 <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-                  {t.contactUs || "Contact Us"}
+                  {t.contactUs}
                 </h3>
-                
+
                 <div className="space-y-3">
                   {/* Address */}
                   <a
-                    href="https://maps.app.goo.gl/kK8myGLgssuPVk4H8"
+                    href={config.address.mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-start gap-3 text-gray-700"
                   >
                     <MapPin className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">620 E. Alvin Dr. #E<br />Salinas, CA 93906</span>
+                    <span className="text-sm">
+                      {config.address.street}<br />
+                      {config.address.city}, {config.address.state} {config.address.zip}
+                    </span>
                   </a>
 
                   {/* Phone */}
                   <a
-                    href="tel:8314498363"
+                    href={`tel:${phoneLink}`}
                     className="flex items-center gap-3 text-gray-700"
                   >
                     <Phone className="w-5 h-5 text-primary-600 flex-shrink-0" />
-                    <span className="text-sm font-medium">831.449.8363</span>
+                    <span className="text-sm font-medium">{config.phone}</span>
                   </a>
 
                   {/* Hours */}
                   <div className="flex items-start gap-3 text-gray-700">
                     <Clock className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
                     <div className="text-sm">
-                      <p className="font-medium">{t.hours || "Hours"}</p>
-                      <p className="text-gray-500">Mon - Thu: 8:00 AM - 6:00 PM</p>
-                      <p className="text-gray-500">Fri - Sun: Closed</p>
+                      <p className="font-medium">{t.hours}</p>
+                      {Object.entries(config.hoursShort).map(([day, time]) => (
+                        <p key={day} className="text-gray-500">{day}: {time}</p>
+                      ))}
                     </div>
                   </div>
                 </div>

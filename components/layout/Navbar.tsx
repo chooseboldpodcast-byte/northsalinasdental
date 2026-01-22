@@ -11,88 +11,92 @@ interface NavLink {
   dropdown?: { href: string; label: string }[];
 }
 
-interface NavLinks {
-  en: NavLink[];
-  es: NavLink[];
-}
-
-const navLinks: NavLinks = {
-  en: [
-    { href: "/", label: "Home" },
-    {
-      label: "Services",
-      dropdown: [
-        { href: "/services#cleaning", label: "Cleaning & Prevention" },
-        { href: "/services#family", label: "Family Dentistry" },
-        { href: "/services#cosmetic", label: "Cosmetic Dentistry" },
-        { href: "/services#veneers", label: "Veneers" },
-        { href: "/services#same-day-crowns", label: "Same-Day Crowns" },
-        { href: "/services#invisalign", label: "Invisalign" },
-        { href: "/services#orthodontics", label: "Orthodontics" },
-        { href: "/services#replacement", label: "Tooth Replacement" },
-        { href: "/services#extraction", label: "Extractions" },
-        { href: "/services#sedation", label: "Sedation Dentistry" },
-      ],
-    },
-    { href: "/team", label: "Our Team" },
-    {
-      label: "New Patients",
-      dropdown: [
-        { href: "/new-patient-forms", label: "New Patient Forms" },
-        { href: "/financial-information", label: "Financial Information" },
-      ],
-    },
-    // { href: "/insurance", label: "Insurance" }, // Hidden until page is ready
-    { href: "/specials", label: "Specials" },
-    { href: "/contact", label: "Contact" },
-  ],
-  es: [
-    { href: "/", label: "Inicio" },
-    {
-      label: "Servicios",
-      dropdown: [
-        { href: "/services#cleaning", label: "Limpieza y Prevención" },
-        { href: "/services#family", label: "Odontología Familiar" },
-        { href: "/services#cosmetic", label: "Odontología Cosmética" },
-        { href: "/services#veneers", label: "Carillas" },
-        { href: "/services#same-day-crowns", label: "Coronas en el Mismo Día" },
-        { href: "/services#invisalign", label: "Invisalign" },
-        { href: "/services#orthodontics", label: "Ortodoncia" },
-        { href: "/services#replacement", label: "Reemplazo de Dientes" },
-        { href: "/services#extraction", label: "Extracciones" },
-        { href: "/services#sedation", label: "Odontología con Sedación" },
-      ],
-    },
-    { href: "/team", label: "Nuestro Equipo" },
-    {
-      label: "Nuevos Pacientes",
-      dropdown: [
-        { href: "/new-patient-forms", label: "Formularios para Nuevos Pacientes" },
-        { href: "/financial-information", label: "Información Financiera" },
-      ],
-    },
-    // { href: "/insurance", label: "Seguro" }, // Hidden until page is ready
-    { href: "/specials", label: "Ofertas Especiales" },
-    { href: "/contact", label: "Contacto" },
-  ],
-};
-
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [expandedDropdown, setExpandedDropdown] = useState<string | null>(null);
-  const { language } = useLanguage();
+  const { language, t, config } = useLanguage();
 
-  const links = language === "es" ? navLinks.es : navLinks.en;
+  // Build navigation links dynamically based on config
+  const buildNavLinks = (): NavLink[] => {
+    const links: NavLink[] = [];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    // Home
+    if (config.navigation.showHome) {
+      links.push({ href: "/", label: language === "es" ? "Inicio" : "Home" });
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    // Services (with dropdown)
+    if (config.navigation.showServices) {
+      links.push({
+        label: t.services,
+        dropdown: [
+          { href: "/services#cleaning", label: language === "es" ? "Limpieza y Prevención" : "Cleaning & Prevention" },
+          { href: "/services#family", label: language === "es" ? "Odontología Familiar" : "Family Dentistry" },
+          { href: "/services#cosmetic", label: language === "es" ? "Odontología Cosmética" : "Cosmetic Dentistry" },
+          { href: "/services#veneers", label: language === "es" ? "Carillas" : "Veneers" },
+          { href: "/services#same-day-crowns", label: language === "es" ? "Coronas en el Mismo Día" : "Same-Day Crowns" },
+          { href: "/services#invisalign", label: "Invisalign" },
+          { href: "/services#orthodontics", label: language === "es" ? "Ortodoncia" : "Orthodontics" },
+          { href: "/services#replacement", label: language === "es" ? "Reemplazo de Dientes" : "Tooth Replacement" },
+          { href: "/services#extraction", label: language === "es" ? "Extracciones" : "Extractions" },
+          { href: "/services#sedation", label: language === "es" ? "Odontología con Sedación" : "Sedation Dentistry" },
+        ],
+      });
+    }
+
+    // Our Team
+    if (config.navigation.showTeam) {
+      links.push({ href: "/team", label: t.ourTeam });
+    }
+
+    // New Patients (with dropdown)
+    if (config.navigation.showNewPatients) {
+      const dropdown: { href: string; label: string }[] = [];
+
+      if (config.navigation.showNewPatientForms) {
+        dropdown.push({ href: "/new-patient-forms", label: t.newPatientForms });
+      }
+      if (config.navigation.showFinancialInfo) {
+        dropdown.push({ href: "/financial-information", label: t.financialInfo });
+      }
+
+      if (dropdown.length > 0) {
+        links.push({
+          label: t.newPatients,
+          dropdown,
+        });
+      }
+    }
+
+    // Insurance
+    if (config.navigation.showInsurance) {
+      links.push({ href: "/insurance", label: t.insurance });
+    }
+
+    // Specials
+    if (config.navigation.showSpecials) {
+      links.push({ href: "/specials", label: t.specials });
+    }
+
+    // Reviews
+    if (config.navigation.showReviews) {
+      links.push({ href: "/reviews", label: t.reviews });
+    }
+
+    // Blog
+    if (config.navigation.showBlog) {
+      links.push({ href: "/blog", label: t.blog });
+    }
+
+    // Contact
+    if (config.navigation.showContact) {
+      links.push({ href: "/contact", label: t.contact });
+    }
+
+    return links;
+  };
+
+  const links = buildNavLinks();
 
   useEffect(() => {
     if (isOpen) {

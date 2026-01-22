@@ -2,6 +2,7 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { siteConfig } from "@/config";
 
 type Language = "en" | "es";
 
@@ -11,25 +12,31 @@ interface Translations {
   scheduleNow: string;
   visitUs: string;
   contactUs: string;
-  address: string;
-  phone: string;
 
   // Navigation
   home: string;
   services: string;
   ourTeam: string;
-  patientEducation: string;
+  newPatients: string;
+  newPatientForms: string;
+  financialInfo: string;
   insurance: string;
   specials: string;
+  reviews: string;
+  blog: string;
   contact: string;
 
   // Mobile Bottom Nav
   menu: string;
   ourDoctor: string;
   call: string;
-  newPatients: string;
   bookOnline: string;
+
+  // Common
   hours: string;
+  learnMore: string;
+  bookAppointment: string;
+  callNow: string;
 }
 
 interface LanguageContextType {
@@ -37,6 +44,8 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void;
   toggleLanguage: () => void;
   t: Translations;
+  /** Site configuration - for non-translated values like phone, address */
+  config: typeof siteConfig;
 }
 
 const translations: Record<Language, Translations> = {
@@ -46,25 +55,31 @@ const translations: Record<Language, Translations> = {
     scheduleNow: "Schedule Now",
     visitUs: "Visit Us",
     contactUs: "Contact Us",
-    address: "620 E. Alvin Dr. #E, Salinas, CA 93906",
-    phone: "831.449.8363",
 
     // Navigation
     home: "Home",
     services: "Services",
     ourTeam: "Our Team",
-    patientEducation: "Patient Education",
+    newPatients: "New Patients",
+    newPatientForms: "New Patient Forms",
+    financialInfo: "Financial Information",
     insurance: "Insurance",
     specials: "Specials",
+    reviews: "Reviews",
+    blog: "Blog",
     contact: "Contact",
 
     // Mobile Bottom Nav
     menu: "Menu",
     ourDoctor: "Our Doctor",
     call: "Call",
-    newPatients: "New Patients",
     bookOnline: "Book Online",
+
+    // Common
     hours: "Hours",
+    learnMore: "Learn More",
+    bookAppointment: "Book Appointment",
+    callNow: "Call Now",
   },
   es: {
     // TopBar
@@ -72,25 +87,31 @@ const translations: Record<Language, Translations> = {
     scheduleNow: "Agendar Ahora",
     visitUs: "Visítenos",
     contactUs: "Contáctenos",
-    address: "620 E. Alvin Dr. #E, Salinas, CA 93906",
-    phone: "831.449.8363",
 
     // Navigation
     home: "Inicio",
     services: "Servicios",
     ourTeam: "Nuestro Equipo",
-    patientEducation: "Educación del Paciente",
+    newPatients: "Nuevos Pacientes",
+    newPatientForms: "Formularios para Nuevos Pacientes",
+    financialInfo: "Información Financiera",
     insurance: "Seguro",
     specials: "Especiales",
+    reviews: "Reseñas",
+    blog: "Blog",
     contact: "Contacto",
 
     // Mobile Bottom Nav
     menu: "Menú",
     ourDoctor: "Doctora",
     call: "Llamar",
-    newPatients: "Nuevos Pacientes",
     bookOnline: "Reservar",
+
+    // Common
     hours: "Horario",
+    learnMore: "Más Información",
+    bookAppointment: "Reservar Cita",
+    callNow: "Llamar Ahora",
   },
 };
 
@@ -125,6 +146,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     setLanguage,
     toggleLanguage,
     t: translations[language],
+    config: siteConfig,
   };
 
   return (

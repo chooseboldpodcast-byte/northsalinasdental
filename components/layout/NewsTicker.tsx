@@ -1,15 +1,18 @@
 "use client";
 
 import { useLanguage } from "@/context/LanguageContext";
-import { tickerItems } from "@/data/tickerContent";
+import { homepageContent } from "@/config/content";
 
 export default function NewsTicker() {
-  const { language } = useLanguage();
+  const { language, config } = useLanguage();
 
-  // Get translated items
-  const items = tickerItems.map((item) =>
-    language === "es" ? item.es : item.en
-  );
+  // Don't render if feature is disabled
+  if (!config.features.enableNewsTicker) {
+    return null;
+  }
+
+  // Get items from homepage content config
+  const items = homepageContent.newsTicker[language].items;
 
   // Render a single set of promotions
   const PromoSet = ({ keyPrefix = "" }: { keyPrefix?: string }) => (
@@ -27,7 +30,7 @@ export default function NewsTicker() {
       <div className="flex items-center h-full">
         <div
           className="flex items-center whitespace-nowrap text-primary-700 text-base font-medium will-change-transform animate-ticker-smooth"
-          style={{ gap: '3rem', backfaceVisibility: 'hidden' }}
+          style={{ gap: '3rem', backfaceVisibility: 'hidden', animationDuration: '45s' }}
         >
           {/* Two identical sets for seamless loop */}
           <PromoSet keyPrefix="a-" />

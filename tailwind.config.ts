@@ -75,7 +75,7 @@ const config: Config = {
         "fade-in": "fadeIn 0.6s ease-out forwards",
         "fade-in-up": "fadeInUp 0.6s ease-out forwards",
         "scale-in": "scaleIn 0.5s ease-out forwards",
-        ticker: "ticker 30s linear infinite",
+        ticker: "ticker 20s linear infinite",
         "ticker-smooth": "tickerSmooth 20s linear infinite",
       },
       keyframes: {
